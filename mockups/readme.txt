@@ -1,0 +1,1 @@
+These are mockups of what the website could look like and were used as a method of keeping design standards during development.
