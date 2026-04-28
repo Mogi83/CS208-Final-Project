@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1 See what everyone is saying!
+  
+  section.stats-overview
+    //- This is for your "Frosted" progress bars
+    .rating-bars-placeholder [Rating Progress Bars]
+
+  section.comments-list
+    h2 Recent Reviews
+    //- This is where the 5 shown max will go
+    .comment-card
+      p.name John Doe
+      p.stars ★★★★☆
+      p.date April 28, 2026
+      p.text Best donuts in town!
+
+  section.add-comment
+    h2 Have something to share? Tell us about it!
+    form(method="POST" action="/create-comment")
+      input(type="text" name="name" placeholder="Your Name")
+      input(type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)")
+      textarea(name="review" placeholder="Your Review")
+      button(type="submit") Submit
