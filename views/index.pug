@@ -1,15 +1,16 @@
 extends layout
 
 block content
-  header.hero
-    h1 Downtown Donuts
-    p Family owned and operated since 1992
-    //- Placeholder for your high-res donut image
+  header#splash-wrapper.dark-theme
+    .logo-box
+      img#donut-top(src='/images/primary-dark-donut-transparent.png' alt='Donut Lid')
+      img#logo-body(src='/images/primary-dark-text-transparent.png' alt='Downtown Donuts')
+    
+    section.drag-hint(aria-hidden="true")
+      .arrow-up
+      span Swipe to open
 
-  section.testimonials-preview
-    h2 Customer Comments
-    //- Map through the top 3 comments later
-  
-  section.location
-    h2 Visit us in person
-    div.map-placeholder [Interactive Map Applet]
+  main#main-content
+    section.hero
+      h1 Freshly Baked, Daily.
+      p The best donuts in the downtown area since 1992.
