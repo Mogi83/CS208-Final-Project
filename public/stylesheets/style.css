@@ -10,6 +10,8 @@
   --accent-color: var(--dark-green);
   --border-color: var(--cool-gray);
   --card-bg: #ffffff;
+
+  --nav-height : 3rem;
 }
 
 .dark-theme {
@@ -86,6 +88,7 @@ h2, h3, nav, p, address, span {
   max-width: 1200px;
   margin: 0 auto;
   transition: opacity 0.8s var(--ease) 0.6s;
+  margin-top: var(--nav-height);
 }
 
 .unlocked #main-content {
@@ -129,11 +132,13 @@ h2, h3, nav, p, address, span {
 /*End Splash animation*/
 
 .main-nav {
-  background-color: var(--seasalt);
+  background-color: var(--bg-color);
   position: sticky;
+  height: var(--nav-height);
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 
@@ -143,8 +148,7 @@ h2, h3, nav, p, address, span {
   gap: 3rem;
   list-style: none;
   padding: 1rem 0;
-  border-bottom: 2px solid var(--accent-color);
-  margin-bottom: 15px;
+  margin: 0;
 }
 
 .main-nav a {
@@ -291,7 +295,6 @@ h2, h3, nav, p, address, span {
 }
 
 /*Start Menu page */
-/* Container */
 #menu-page {
   max-width: 900px;
   margin: 0 auto;
@@ -448,7 +451,6 @@ h2, h3, nav, p, address, span {
   font-size: 0.95rem;
 }
 
-
 /* Mobile First: They stack by default */
 .menu-row-dynamic {
   display: grid;
@@ -459,11 +461,10 @@ h2, h3, nav, p, address, span {
 /* Desktop: They go side-by-side */
 @media (min-width: 768px) {
   .menu-row-dynamic {
-    grid-template-columns: 1.2fr 0.8fr; /* Gives the coffee table slightly more room than the drinks list */
+    grid-template-columns: 1.2fr 0.8fr;
     align-items: start;
   }
   
-  /* Optional: Adjust the category titles to be smaller when side-by-side */
   .menu-row-dynamic .menu-section h2 {
     font-size: 1.2rem;
   }
@@ -472,7 +473,7 @@ h2, h3, nav, p, address, span {
 .dense-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem; /* Keeps it dense */
+  font-size: 0.85rem;
 }
 
 .dense-table th {
@@ -482,11 +483,11 @@ h2, h3, nav, p, address, span {
   font-weight: 700;
   text-transform: uppercase;
   padding-bottom: 8px;
-  border-bottom: 1px solid var(--saffron); /* Saffron accent */
+  border-bottom: 1px solid var(--saffron);
 }
 
 .dense-table td {
-  padding: 4px 0; /* Tight vertical spacing */
+  padding: 4px 0;
   color: #444;
-  width: 50%; /* Splitting into two columns for density */
+  width: 50%;
 }
