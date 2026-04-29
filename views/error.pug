@@ -1,6 +1,8 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  .error-container
+    h1 404 - Hole in the Web
+    p Looks like that page got eaten.
+    a(href='/') Take me back to the donuts!
+    //- Add a funny donut illustration here later
