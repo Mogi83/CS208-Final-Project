@@ -11,6 +11,54 @@ block content
       span Swipe to open
 
   main#main-content
-    section.hero
-      h1 Freshly Baked, Daily.
-      p The best donuts in the downtown area since 1992.
+    nav.main-nav
+      ul
+        li: a(href="/") Home
+        li: a(href="/menu") Menu
+        li: a(href="/story") Our Story
+        li: a(href="/testimonials") Testimonials
+
+    section.hero-banner
+      .hero-content
+        h1.italianno Downtown Donuts
+        p Family owned and operated since 1992
+
+    section.comments-section
+      h2 Customer Comments
+      .testimonial-grid
+        article.comment-card
+          h3 John Doe
+          .stars ★★★★☆
+          p Best donuts in town!
+        article.comment-card
+          h3 Jane Smith
+          .stars ★★★★★
+          p The maple bars are life-changing.
+        article.comment-card
+          h3 Sam Wilson
+          .stars ★★★★☆
+          p Great coffee, better donuts.
+
+    footer.visit-footer
+      .visit-container
+        h2 Visit us in person
+        .visit-flex
+          .map-placeholder
+            p Interactive Map Applet
+          .details
+            address Address, City ST
+            h3 Hours:
+            ul.hours-list
+              li <span>Monday</span> <span>6am - 10am</span>
+              li <span>Tuesday</span> <span>6am - 10am</span>
+              li <span>Wednesday</span> <span>6am - 10am</span>
+              li <span>Thursday</span> <span>6am - 10am</span>
+              li <span>Friday</span> <span>6am - 10am</span>
+              li <span>Saturday</span> <span>8am - 12pm</span>
+              li <span>Sunday</span> <span>Closed</span>
+      
+      .order-partners
+        p Or Order online through our partners:
+        .partner-links
+          a.btn-partner(href="#") Uber Eats
+          a.btn-partner(href="#") DoorDash

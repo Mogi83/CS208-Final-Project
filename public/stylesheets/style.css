@@ -33,10 +33,15 @@ body, html {
   height: 100%;
 }
 
-h1, h2, .italianno {
+h1, .brand-font {
   font-family: "Italianno", cursive;
 }
 
+h2, h3, nav, p, address, span {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Splash animation */
 #splash-wrapper.dark-theme {
   position: fixed;
   inset: 0;
@@ -123,4 +128,148 @@ h1, h2, .italianno {
 .is-dragging .drag-hint,
 .unlocked .drag-hint {
   opacity: 0;
+}
+/*End Splash animation*/
+
+/*index.pug*/
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  list-style: none;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 40px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.hero-banner {
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/images/donut-shop-highres.jpg'); /* credit Nick Souza https://www.pexels.com/photo/close-up-of-donuts-in-a-bakery-24960960/ */
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  margin-bottom: 60px;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  border-top: 1px solid white;
+  padding-top: 10px;
+  display: inline-block;
+}
+
+.comments-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.comment-card {
+  border: 1px solid #eee;
+  padding: 30px;
+  border-radius: 8px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.stars {
+  color: var(--saffron);
+  margin: 10px 0;
+}
+
+.visit-footer {
+  padding: 60px 0;
+  border-top: 1px solid #eee;
+}
+
+.visit-flex {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.map-placeholder {
+  flex: 1;
+  background: #e0e0e0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.details {
+  flex: 1;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Order Online Buttons */
+.order-partners {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.partner-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-partner {
+  padding: 12px 40px;
+  border: 2px solid var(--dark-green);
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--dark-green);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-partner:hover {
+  background: var(--dark-green);
+  color: white;
 }
