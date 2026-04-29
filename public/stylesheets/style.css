@@ -9,18 +9,20 @@
   --seasalt: #f7f7f7;
   --cool-gray: #7e7f9a;
 
+  /* Default light mode */
   --bg-color: var(--seasalt);
   --text-color: #000000;
   --accent-color: var(--dark-green);
-  --muted-text: var(--cool-gray);
-
-  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --border-color: var(--cool-gray);
+  --card-bg: #ffffff;
 }
 
 .dark-theme {
   --bg-color: var(--dark-green);
   --text-color: var(--seasalt);
   --accent-color: var(--saffron);
+  --border-color: var(--saffron);
+  --card-bg: rgba(255, 255, 255, 0.05);
 }
 
 body, html {
@@ -138,7 +140,7 @@ h2, h3, nav, p, address, span {
   gap: 3rem;
   list-style: none;
   padding: 20px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--accent-color);
   margin-bottom: 40px;
 }
 
@@ -166,7 +168,7 @@ h2, h3, nav, p, address, span {
 
 .hero-content {
   text-align: center;
-  color: white;
+  color: var(--seasalt);
 }
 
 .hero-content h1 {
@@ -176,7 +178,7 @@ h2, h3, nav, p, address, span {
 
 .hero-content p {
   font-size: 1.2rem;
-  border-top: 1px solid white;
+  border-top: 1px solid var(--seasalt);
   padding-top: 10px;
   display: inline-block;
 }
@@ -189,16 +191,16 @@ h2, h3, nav, p, address, span {
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 80px;
 }
 
 .comment-card {
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
   padding: 30px;
   border-radius: 8px;
-  background: white;
+  background: var(--card-bg);
   text-align: center;
   box-shadow: 0 4px 10px rgba(0,0,0,0.02);
 }
@@ -210,7 +212,7 @@ h2, h3, nav, p, address, span {
 
 .visit-footer {
   padding: 60px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color);
 }
 
 .visit-flex {
@@ -221,7 +223,7 @@ h2, h3, nav, p, address, span {
 
 .map-placeholder {
   flex: 1;
-  background: #e0e0e0;
+  background: var(--cool-gray);
   height: 300px;
   display: flex;
   align-items: center;
@@ -243,7 +245,7 @@ h2, h3, nav, p, address, span {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* Order Online Buttons */
@@ -261,15 +263,15 @@ h2, h3, nav, p, address, span {
 
 .btn-partner {
   padding: 12px 40px;
-  border: 2px solid var(--dark-green);
+  border: 2px solid var(--accent-color);
   border-radius: 30px;
   text-decoration: none;
-  color: var(--dark-green);
+  color: var(--accent-color);
   font-weight: bold;
   transition: 0.3s;
 }
 
 .btn-partner:hover {
-  background: var(--dark-green);
-  color: white;
+  background: var(--accent-color);
+  color: var(--bg-color);
 }
