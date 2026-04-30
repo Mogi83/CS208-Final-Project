@@ -491,3 +491,66 @@ h2, h3, nav, p, address, span {
   color: #444;
   width: 50%;
 }
+
+/* Start Our Story */
+
+.story-hero {
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 0 20px;
+}
+
+/* Background Images */
+.old-photo {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/donut-shop-old.jpg'); /* source https://www.flickr.com/photos/southbeachcars/15779992015 */
+}
+
+.current-photo {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/donut-shop-new.jpg'); /* source https://commons.wikimedia.org/wiki/File:Dunkin%27_Donuts_products_at_a_shop_in_Taiwan_20120505.jpg */
+}
+
+.story-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+
+.story-card p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+
+@media (min-width: 768px) {
+  .story-hero {
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed; 
+    padding: 0 20px;
+  }
+
+  .old-photo, .current-photo {
+    height: 100vh;
+  }
+
+  .story-card {
+    max-width: 600px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+}
