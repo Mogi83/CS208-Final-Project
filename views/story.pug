@@ -2,12 +2,21 @@ extends layout
 
 block content
   #story-page
-  .story-hero.old-photo
-    .story-card
-      h2 A Family Legacy since 1992
-      p Downtown Donuts started in our grandmother's kitchen making quality donuts for our busy family.
+    section.story-hero
+      .hero-image-container
+        img(src='/images/donut-shop-old.jpg' alt='Black and white vintage photo of the original Downtown Donuts storefront from 1992')
+        //- source https://www.flickr.com/photos/southbeachcars/15779992015
 
-  .story-hero.current-photo
-    .story-card
-      h2 How the tradition continues
-      p Now 34 years later our children are behind the counter using the same time-tested recipes.
+        .overlay
+      .story-card
+        h2 A Family Legacy since 1992
+        p Downtown Donuts started in our grandmother's kitchen making quality donuts for our busy family.
+
+    section.story-hero
+      .hero-image-container 
+        img(src='/images/donut-shop-new.jpg' alt='A modern, bright donut shop counter filled with a colorful variety of fresh donuts') 
+        //- source https://commons.wikimedia.org/wiki/File:Dunkin%27_Donuts_products_at_a_shop_in_Taiwan_20120505.jpg
+        .overlay
+      .story-card
+        h2 How the tradition continues
+        p Now 34 years later our children are behind the counter using the same time-tested recipes.
