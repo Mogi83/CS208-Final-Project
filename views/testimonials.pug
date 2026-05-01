@@ -2,14 +2,21 @@ extends layout
 
 block content
   #testimonials-page
-    h1.brand-font.text-center See what everyone is saying!
-    
-    .testimonial-grid
-      each val in [1, 2, 3]
-        .comment-card
+    section.comments-section
+      h2 Customer Testimonials!
+      .testimonial-grid
+        article.comment-card
           h3 John Doe
           .stars ★★★★☆
           p Best donuts in town!
+        article.comment-card
+          h3 Jane Smith
+          .stars ★★★★★
+          p The maple bars are life-changing.
+        article.comment-card
+          h3 Sam Wilson
+          .stars ★★★★☆
+          p Great coffee, better donuts.
 
     .all-reviews-container
       .review-stats-box
