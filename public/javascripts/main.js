@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const donut = document.getElementById("donut-top");
   const wrapper = document.getElementById("splash-wrapper");
 
+  if (!wrapper || !donut) {
+    console.log("Splash elements not found, skipping splash script.");
+    return;
+  }
+  
   let startY = 0;
   let isDragging = false;
 
