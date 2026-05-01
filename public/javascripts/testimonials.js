@@ -82,11 +82,26 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             
             const msg = document.getElementById('form-message');
+            const submitBtn = form.querySelector('button[type="submit"]');
+
+            // Edge Case 4: Prevent double-clicking
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+
             const data = {
                 name: document.getElementById('form-name').value,
                 rating: document.getElementById('form-rating').value,
                 review: document.getElementById('form-review').value
             };
+
+            // Edge Case 2 & 3: Whitespace and Length
+            if (!data.name.trim() || !data.review.trim()) {
+                alert("You can't leave the name or review blank!");
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                return;
+            }
 
             try {
                 const response = await fetch('/submit-comment', {
@@ -100,6 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     msg.style.display = 'block';
                     msg.innerText = "Review posted!";
                     msg.style.color = "green";
+                    
                     loadComments(1);
                     updateStats();
                 } else {
@@ -107,7 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert(errData.error || "Submission failed");
                 }
             } catch (err) {
+                // Edge Case 1: Server unreachable
                 console.error("Submit error:", err);
+                alert("The comment service is unreachable right now. Please try again later!");
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
             }
         });
     }
@@ -115,8 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('next-btn').onclick = () => { currentPage++; loadComments(currentPage); };
     document.getElementById('prev-btn').onclick = () => { if(currentPage > 1) { currentPage--; loadComments(currentPage); } };
 
-    
     loadComments(1);
     updateStats();
-
 });

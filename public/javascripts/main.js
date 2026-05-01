@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Splash elements not found, skipping splash script.");
     return;
   }
-  
+
   let startY = 0;
   let isDragging = false;
 
@@ -92,4 +92,25 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: false },
   );
   window.addEventListener("touchend", endDrag);
+
+  let spaceTimer;
+
+  window.addEventListener("keydown", (e) => {
+    if (e.code === "Space" && !document.body.classList.contains("unlocked")) {
+      e.preventDefault();
+      
+      if (!spaceTimer) {
+        spaceTimer = setTimeout(() => {
+          unlock();
+        }, 500);
+      }
+    }
+  });
+
+  window.addEventListener("keyup", (e) => {
+    if (e.code === "Space") {
+      clearTimeout(spaceTimer);
+      spaceTimer = null;
+    }
+  });
 });
