@@ -40,14 +40,12 @@ router.post('/submit-comment', function(req, res) {
         return res.status(400).json({ error: "You can't leave the name or review blank!" });
     }
 
-    const query = 'INSERT INTO testimonials (name, rating, review, created_at) VALUES (?, ?, ?, ?)';
-    const values = [name, rating, review, new Date()];
+    // Use NOW() in the SQL query so the server generates the time
+    const query = 'INSERT INTO testimonials (name, rating, review, created_at) VALUES (?, ?, ?, NOW())';
+    const values = [name, rating, review];
 
     req.db.query(query, values, function(err, result) {
-        if (err) {
-            console.error("DB Save Error:", err);
-            return res.status(500).json({ error: "Database failed to save." });
-        }
+        if (err) return res.status(500).json({ error: "Database error" });
         res.status(200).json({ message: "Review added!" });
     });
 });

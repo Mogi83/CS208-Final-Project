@@ -34,12 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (Array.isArray(data)) {
                 data.forEach(c => {
+                    const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+                    const formattedDate = new Date(c.created_at).toLocaleDateString(undefined, dateOptions);
+
                     const div = document.createElement('div');
-                    div.className = 'review-item';
+                    div.className = 'review-row'; 
+                    
                     div.innerHTML = `
-                        <strong>${c.name}</strong> 
-                        <span style="color: #f7c64a;">${'★'.repeat(c.rating)}${'☆'.repeat(5-c.rating)}</span>
-                        <p>${c.review}</p>
+                        <div class="review-header">
+                            <h3>${c.name}</h3>
+                            <div class="stars">${'★'.repeat(c.rating)}${'☆'.repeat(5-c.rating)}</div>
+                        </div>
+                        <p>"${c.review}"</p>
+                        <div class="review-meta">Posted on ${formattedDate}</div>
                     `;
                     container.appendChild(div);
                 });
