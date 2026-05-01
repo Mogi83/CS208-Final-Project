@@ -554,3 +554,55 @@ h2, h3, nav, p, address, span {
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
   }
 }
+
+/* Testimonials */
+
+.review-stats-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  background: var(--card-bg);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+
+/* The "Frosted" Progress Bars */
+.bar-bg {
+  background: #eee;
+  height: 12px;
+  border-radius: 6px;
+  flex-grow: 1;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  background: var(--saffron); /* Frosted look */
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* Pagination Buttons */
+.pagination-controls {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.pagination-controls button {
+  background: none;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  padding: 5px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}

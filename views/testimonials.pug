@@ -1,25 +1,50 @@
 extends layout
 
 block content
-  h1 See what everyone is saying!
-  
-  section.stats-overview
-    //- This is for your "Frosted" progress bars
-    .rating-bars-placeholder [Rating Progress Bars]
+  #testimonials-page
+    h1.brand-font.text-center See what everyone is saying!
+    
+    //- Featured Grid
+    .testimonial-grid
+      each val in [1, 2, 3]
+        .comment-card
+          h3 John Doe
+          .stars ★★★★☆
+          p Best donuts in town!
 
-  section.comments-list
-    h2 Recent Reviews
-    //- This is where the 5 shown max will go
-    .comment-card
-      p.name John Doe
-      p.stars ★★★★☆
-      p.date April 28, 2026
-      p.text Best donuts in town!
+    //- Reviews Section (Always Visible Now)
+    .all-reviews-container
+      .review-stats-box
+        .stats-bars
+          each score in [5, 4, 3, 2, 1]
+            .stat-row
+              span #{score}
+              .bar-bg: .bar-fill(style=`width: ${score * 15}%`)
+        
+        .reviews-list#comments-container
+          //- JS fills this
 
-  section.add-comment
-    h2 Have something to share? Tell us about it!
-    form(method="POST" action="/create-comment")
-      input(type="text" name="name" placeholder="Your Name")
-      input(type="number" name="rating" min="1" max="5" placeholder="Rating (1-5)")
-      textarea(name="review" placeholder="Your Review")
-      button(type="submit") Submit
+      .pagination-controls
+        button#prev-btn Previous
+        span#page-info Page 1
+        button#next-btn Next
+
+    //- Submission Form
+    .order-cta
+      h2 Have something to share? Tell us about it!
+      form#comment-form.callout-box
+        .form-row
+          //- Added IDs here so JS can find the values
+          input(type="text" name="name" id="form-name" placeholder="Name" required maxlength="50")
+          select(name="rating" id="form-rating")
+            option(value="5") 5 Stars
+            option(value="4") 4 Stars
+            option(value="3") 3 Stars
+            option(value="2") 2 Stars
+            option(value="1") 1 Star
+        textarea(name="review" id="form-review" placeholder="Review" required maxlength="500")
+        button.btn-partner(type="submit") Submit
+        #form-message(style="display:none; margin-top: 10px;")
+    
+    //- Changed path to start from root /
+    script(src="/javascripts/testimonials.js")
