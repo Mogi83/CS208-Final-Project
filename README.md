@@ -1,7 +1,7 @@
 # CS208 Full Stack Final Project - Donut Shop Application
 
 - Name: Evan
-- GitHub: [https://github.com/johndoe](https://github.com/johndoe)
+- GitHub: [https://github.com/Mogi83](https://github.com/Mogi83)
 - Term: Spring 2026
 
 ## Project Description
